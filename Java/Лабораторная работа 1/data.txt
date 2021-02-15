@@ -1,0 +1,10 @@
+Id,Name,Average_Mark,isRegistered
+int,string,float,boolean
+1,Kirill,4.4,true
+10,Anastasia,4.4,false
+3,Denis,4.2,true
+5,Anna,4.2,false
+53,Zhanna,4.8,true
+6,Sergei,3.3,false
+65,Anatoliy,4,false
+4,Semyon,4.2,true

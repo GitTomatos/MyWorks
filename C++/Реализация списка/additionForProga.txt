@@ -1,0 +1,144 @@
+#include "MyList.h"
+
+template<typename T>
+MyList<T>::MyList(int maxSize) {
+	Size = 0;
+	this->maxSize = maxSize;
+	head = nullptr;
+}
+
+template<typename T>
+MyList<T>::~MyList() {
+	remove_all();
+}
+
+template<typename T>
+void MyList<T>::increaseSize(int incSize) {
+	if (this->maxSize == 0) {
+		perror("This List is infinite. You can't increase its size");
+		return;
+	}
+	if (incSize <= 0) {
+		perror("Your number should be >= 0");
+		return;
+	}
+	maxSize += incSize;
+}
+
+template<typename T>
+void MyList<T>::addToTheEnd(T data) {
+	if (maxSize != 0 and Size == maxSize) {
+		perror("List is full");
+		return;
+	}
+	if (head == nullptr) {
+		head = new Echelon<T>(data);
+	} else {
+		Echelon<T> *current = head;
+		while (current->pNext != nullptr) {
+			current = current->pNext;
+		}
+		current->pNext = new Echelon<T>(data);
+	}
+	Size++;
+}
+
+template<typename T>
+void MyList<T>::remove_first() {
+	if (head != nullptr) {
+		Echelon<T> *oldHead = head;
+		head = head->pNext;
+		delete oldHead;
+		Size--;
+	} else {
+		perror("The List is empty. You can't delete first element.");
+		return;
+	}
+}
+
+template<typename T>
+void MyList<T>::remove_all() {
+	while (Size) {
+		remove_first();
+	}
+}
+
+template<typename T>
+int MyList<T>::find(T element) {
+	if (Size != 0) {
+		Echelon<T> *current = head;
+		int index = 0;
+		while (current->pNext != nullptr) {
+			if (current->data == element)
+				return index;
+			index++;
+			current = current->pNext;
+		}
+		return 0;
+	} else {
+		perror("The List is empty.");
+		return -1;
+	}
+}
+
+template<typename T>
+void MyList<T>::remove(const int index) {
+	if (index >= Size) {
+		perror("The List is empty. You can't delete elements.");
+		return;
+	}
+
+	if (index == 0) {
+		Echelon<T> *current = head;
+		head = head->pNext;
+		delete current;
+		Size--;
+	} else {
+		int counter = 0;
+		Echelon<T> *current = this->head;
+		Echelon<T> *last = this->head;
+		while (counter != index) {
+			last = current;
+			current = current->pNext;
+			counter++;
+		}
+		last->pNext = current->pNext;
+		delete current;
+		Size--;
+	}
+}
+
+template<typename T>
+int MyList<T>::GetSize() {
+	return Size;
+}
+template<typename T>
+int MyList<T>::GetMaxSize() {
+	return maxSize;
+}
+
+template<typename T>
+void MyList<T>::print() {
+	if (Size == 0) {
+		cout << "List is Empty" << endl;
+		return;
+	}
+	Echelon<T> *ech = head;
+	while (ech != nullptr) {
+		cout << ech->data << " ";
+		ech = ech->pNext;
+	}
+	cout << endl;
+}
+
+template<typename T>
+T& MyList<T>::operator[](const int index) {
+	int counter = 0;
+	Echelon<T> *current = this->head;
+	while (current != nullptr) {
+		if (counter == index)
+			return current->data;
+		current = current->pNext;
+		counter++;
+	}
+}

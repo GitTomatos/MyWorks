@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1092.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameWindowController">
+   <children>
+      <GridPane maxHeight="500.0" maxWidth="810.0" prefHeight="500.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="262.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="612.0" minWidth="10.0" prefWidth="533.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="283.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane maxHeight="499.0" maxWidth="540.0" prefHeight="499.0" prefWidth="540.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="255.0" minHeight="10.0" prefHeight="217.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="333.0" minHeight="10.0" prefHeight="215.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="159.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <right>
+                        <JFXButton fx:id="addCardButton2" onAction="#addCard2" text="Add Card" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Lucida Sans Unicode" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </right>
+                     <left>
+                        <JFXButton fx:id="addCardButton1" onAction="#addCard1" text="Add Card" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Lucida Sans Unicode" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </left>
+                     <center>
+                        <JFXButton fx:id="takeCardButton2" onAction="#takeCardPlayer2" text="Take" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <GridPane maxHeight="277.0" maxWidth="557.0" prefHeight="240.0" prefWidth="557.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <FlowPane fx:id="deskAttackCardPane" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </GridPane>
+                  <GridPane maxHeight="236.0" maxWidth="548.0" prefHeight="236.0" prefWidth="548.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <FlowPane fx:id="deskAnswerCardPane" />
+                           </content>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ScrollPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <TextField alignment="CENTER" prefHeight="50.0" prefWidth="270.0" text="Player 1">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="801.0" layoutY="-3.0" prefHeight="50.0" prefWidth="294.0" text="Player 2">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </TextField>
+      <ScrollPane layoutY="50.0" prefHeight="404.0" prefWidth="270.0">
+         <content>
+            <FlowPane fx:id="firstPlayerPane" prefHeight="409.0" prefWidth="271.0" />
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="805.0" layoutY="47.0" prefHeight="404.0" prefWidth="294.0">
+         <content>
+            <FlowPane fx:id="secondPlayerPane" prefHeight="410.0" prefWidth="287.0" />
+         </content>
+      </ScrollPane>
+      <JFXButton fx:id="takeCard1Button" layoutX="109.0" layoutY="461.0" onAction="#takeCardPlayer1" text="Take" />
+   </children>
+</AnchorPane>

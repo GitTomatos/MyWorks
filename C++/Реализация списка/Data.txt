@@ -1,0 +1,38 @@
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+
+template<typename T>
+class MyList {
+public:
+	MyList(int maxSize = 0);
+	virtual ~MyList();
+	virtual void addToTheEnd(T data);
+	virtual void increaseSize(int incSize);
+	virtual int find(T element);
+	virtual int GetSize();
+	virtual int GetMaxSize();
+	virtual T& operator[](int index);
+	virtual void remove_first();
+	virtual void remove(int index);
+	virtual void remove_all();
+	virtual void print();
+
+protected:
+	template<typename U>
+	class Echelon {
+	public:
+		Echelon *pNext;
+		T data;
+		Echelon(U data = U(), Echelon *pNext = nullptr) {
+			this->data = data;
+			this->pNext = pNext;
+		}
+	};
+	int Size;
+	int maxSize;
+	Echelon<T> *head;
+};
+
+

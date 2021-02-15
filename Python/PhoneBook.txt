@@ -1,0 +1,6 @@
+Mazur; Ilya; 89876543210; -
+Voronina; Karina; 89876543210; 11.05.2001
+Mihailin; Kostya; 88005553535; 31.12.2012
+New; User; 88005553535; -
+Kratov; Kirill; 89004345671; 11.12.2013
+Kokorin; Anton; 89876547352; 11.12.2013

@@ -1,0 +1,119 @@
+Данная программа - это однотабличная файловая база данных. Предметной областью является организация мероприятий внутри ВШЭ.
+Состоит из колонок "Id", "Name", "Average_Mark", "isRegistered", где Id - идентификационный номер студента, Name - Имя студента, Average_Mark - средний балл студента, isRegistered - зарегистрирован ли студент на мероприятие или нет.
+Первичный ключ - Id.
+
+Вся работа осуществлялась внутри файлов (создавались временные файлы для проведения нужных операций, а потом при необходимости перезаписывался основной файл).
+
+Поиск по таблице сделан на основе бинарного поиска. Изначально таблица отсортирована по первичному ключу. Если необходим поиск по другим колонкам, копия таблицы сортируется по нужной колонке, после чего ищется значение.
+
+
+
+
+===========
+Поиск
+===========
+
+Временная статистика:
+а) При 8ми строках, исключая 2 служебные, у программы занимает 39 миллисекунд, чтобы найти значение "Name,Semyon".
+
+б) При 11090 строк (Эти 8 строк были скопированы множество раз для теста. Одинаковые первичные ключи в данном случае роли не играют и ничего не испортят)
+	Занимает 109766 миллисекунд.
+
+-----------
+Сложность:
+-----------
+
+findRecord() {
+	findRecord(String,String){
+	    checkLegalType(String,String; //K
+
+	    fileSort(String,boolean) {
+	        while (line != null); // N
+
+	        sorting(int,int,int,int); // N * logN
+
+	        if (replaceMainDB == true); // N
+	    }
+
+	    fileBinarySearch(String,String,String,boolean,boolean){
+	        while (br.readLine() != null); // N
+
+	        fileBinarySearch(String, int, String, boolean, boolean, int, int); // N*logN
+	    }
+
+	    while (leftBorder < rightBorder){
+	        for (int i = 0; i < (leftBorder + rightBorder) / 2; i++); // (N*LogN)/2
+	    }
+
+	    while (leftBorder <= rightBorder) {
+	        for (int i = 0; i < (leftBorder + rightBorder) / 2; i++); // (N*LogN)/2
+	    }
+
+	};
+
+for (int i = 0; i < indexes[0]; i++) {}; //N/2
+
+for (int i = indexes[0]; i <= indexes[1]; i++) {}; // Вместе N/2
+
+}  
+
+
+O(K + N + N*logN + N + N + N*logN + (N*LogN)/2 + (N*LogN)/2 + N/2 + N/2) =
+    = O(K + 4*N + 3*N*logN) = O(K + N + N*logN) = O(K + N*logN)
+
+
+
+============
+Добавление
+============
+
+Новая запись добавилась за 11 миллисекунд
+
+
+------------
+Сложность:
+------------
+
+AddNewRecord(){
+    validateRecord(String[]){
+        for (int i = 0; i < record.length; i++); //K
+    }
+
+    for (int i = 0; i < Main.serviceRowsNumber; i++); // K
+
+    while ((line = br.readLine()) != null); // N
+
+    fileBinarySearch(String,String,String,boolean,boolean); //N + N*logN
+
+    reWriteDB(String,int){
+        while ((line = br.readLine()) != null); // N
+    }
+}
+
+O(K + K + N + N + N*logN + N) = O(2*K + 3*N + N*logN) = 
+    = O(K + N*logN)
+
+
+
+
+============
+Удаление
+============
+СТрока удалилась за 12 миллисекунд
+
+------------
+Сложность:
+------------
+
+deleteRecord() {
+    findRecord(String,String); //K + N + N*logN + N + N + N*logN + (N*LogN)/2 + (N*LogN)/2
+
+    for (int i = 0; i < indexes.length; i++); // K
+
+    while (line != null); // N
+
+    fileSort(String,boolean); //N + N*logN + N
+}
+
+O(K + N + N*logN + N + N + N*logN + (N*LogN)/2 + (N*LogN)/2 + N + N + N*logN + N) = 
+    O(K + 6*N + 4*N*logN) = O(K + N*logN)

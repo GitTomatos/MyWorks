@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane cache="false" cacheHint="DEFAULT" depthTest="INHERIT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="800.0" minWidth="1280.0" mouseTransparent="false" pickOnBounds="false" prefHeight="800.0" prefWidth="1280.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.StartWindowController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <ImageView id="807061294.jpg" blendMode="SRC_OVER" cache="true" disable="true" focusTraversable="true" pickOnBounds="false" preserveRatio="false" smooth="true" visible="true" x="0.0" y="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <image>
+            <Image url="@../../../../Downloads/807061294.jpg" preserveRatio="true" smooth="true" />
+          </image>
+        </ImageView>
+        <Button fx:id="StartButton" layoutX="201.0" layoutY="97.0" mnemonicParsing="false" onAction="#startGame" prefHeight="60.0" prefWidth="240.0" text="Start" textAlignment="CENTER" textFill="BLACK">
+          <font>
+            <Font name="Ink Free" size="25.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Button fx:id="ExitButton" font="$x1" layoutX="710.0" layoutY="674.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="60.0" prefWidth="240.0" text="Exit" textAlignment="CENTER" textFill="BLACK" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

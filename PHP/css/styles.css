@@ -1,0 +1,64 @@
+body {
+	background: url(../img/background-2.jpg) no-repeat center center fixed;
+	margin-top: 1%;
+}
+
+p {
+	font-size: 2rem;
+}
+
+.info-tbl {
+	border-collapse: separate;
+	/*margin-bottom: 60px;*/
+}
+
+.info-tbl th, td{
+	text-align: center;
+	font-size: 1.3rem;
+	border: 1px solid black;
+	padding: 10px 10px;
+}
+
+.info-tbl th {
+	background: #b7eaa6;
+}
+
+.info-tbl tr {
+	background: #D8E5FF;
+}
+
+.info-tbl tr:hover{
+	background: #9ABCFF;
+}
+
+.btns {
+	display: flex;
+}
+
+.btns-columns {
+	flex-direction: column;
+	align-items: center;
+	/*margin-top: 40px;*/
+	margin-bottom: 40px;
+}
+
+.btns-columns button {
+	width: 20%;
+}
+
+.cust-btn {
+	width: 100%;
+}
+
+.my-btn-background button{
+	font-size: 1.5rem;
+	background: #F2FFE5;
+}
+
+.my-btn-background button:hover {
+	background: #ED8A5E;
+}
+
+.mb-6 {
+  margin-bottom: 60px;
+}
